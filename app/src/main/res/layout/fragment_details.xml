@@ -1,0 +1,79 @@
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.example.moamen.moviesapp.DetailsFragment">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/first_linear">
+    <ImageView
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:id = "@+id/posterView">
+    </ImageView>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/posterView"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:id = "@+id/titleView"/>
+</LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/highlighted_text_material_light"
+        android:text="Add to favourite"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/favourite_button"
+        android:layout_below="@id/first_linear"/>
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/favourite_button"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:id = "@+id/overviewView"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="@color/primary_dark_material_dark"
+        android:text="Trailers:"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/trailers_txt"
+        android:layout_below="@id/overviewView"/>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trailers_txt"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/listView"></ListView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="@color/primary_dark_material_dark"
+        android:text="Reviews:"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/reviews_txt"
+        android:layout_below="@id/listView"/>
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reviews_txt"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/listView2"></ListView>
+
+</RelativeLayout>
+</ScrollView>
