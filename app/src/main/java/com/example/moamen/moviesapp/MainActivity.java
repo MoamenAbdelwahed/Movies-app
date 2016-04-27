@@ -15,17 +15,10 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        if (findViewById(R.id.fragment_container) != null){
-//            mTwoPane = true;
-//            if (savedInstanceState == null) {
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DetailsFragment()).commit();
-//            }
-//        }
-        //else {
-//            mTwoPane = false;
-//            MainFragment mFragment = new MainFragment();
-//            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, mFragment).commit();
-        //}
+        if (findViewById(R.id.fragment_main_tablet) == null){
+            MainFragment mFragment = new MainFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, mFragment).commit();
+        }
     }
 
 
