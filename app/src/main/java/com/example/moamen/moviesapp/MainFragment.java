@@ -109,7 +109,7 @@ public class MainFragment extends Fragment {
                 Movieobj.putSerializable("MovieObj", (Serializable) moviesAdapter.getItem(position));
                 DetailsFragment detailsFragment = new DetailsFragment();
                 detailsFragment.setArguments(Movieobj);
-              if (getView().findViewById(R.id.fragment_container_tablet) != null) {
+              if (getActivity().findViewById(R.id.fragment_container_tablet) == null) {
                   getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, detailsFragment).addToBackStack("backToMain").commit();
               }
                 else{
