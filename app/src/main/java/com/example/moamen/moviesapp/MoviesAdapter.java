@@ -32,9 +32,6 @@ public class MoviesAdapter extends ArrayAdapter<Movies> {
         ImageView imageView = (ImageView) gridView.findViewById(R.id.imageView);
         Picasso.with(getContext()).load("http://image.tmdb.org/t/p/w185/" + currentMovie.getPoster()).into(imageView);
 
-        //TextView textView = (TextView) gridView.findViewById(R.id.textView);
-        //textView.setText(currentMovie.getTitle());
-
         return gridView;
     }
 }

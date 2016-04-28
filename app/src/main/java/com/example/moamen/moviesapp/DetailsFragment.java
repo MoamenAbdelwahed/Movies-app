@@ -178,6 +178,7 @@ public class DetailsFragment extends Fragment {
     return view;
     }
 
+
     public String[] updateReviews(){
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
