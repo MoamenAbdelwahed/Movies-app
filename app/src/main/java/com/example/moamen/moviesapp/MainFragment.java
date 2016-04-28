@@ -109,8 +109,12 @@ public class MainFragment extends Fragment {
                 Movieobj.putSerializable("MovieObj", (Serializable) moviesAdapter.getItem(position));
                 DetailsFragment detailsFragment = new DetailsFragment();
                 detailsFragment.setArguments(Movieobj);
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, detailsFragment).addToBackStack("backToMain").commit();
-
+              if (getView().findViewById(R.id.fragment_container_tablet) != null) {
+                  getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, detailsFragment).addToBackStack("backToMain").commit();
+              }
+                else{
+                  getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_tablet, detailsFragment).addToBackStack("backToMainTablet").commit();
+              }
             }
         });
     }

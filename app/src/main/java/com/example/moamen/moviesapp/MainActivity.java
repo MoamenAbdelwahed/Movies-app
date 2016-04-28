@@ -9,8 +9,6 @@ import android.view.Menu;
 public class MainActivity extends AppCompatActivity{
 
 
-    Boolean mTwoPane;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
