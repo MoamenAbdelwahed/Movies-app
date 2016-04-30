@@ -1,6 +1,7 @@
 package com.example.moamen.moviesapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
@@ -105,15 +106,18 @@ public class MainFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Bundle Movieobj = new Bundle();
-                Movieobj.putSerializable("MovieObj", (Serializable) moviesAdapter.getItem(position));
-                DetailsFragment detailsFragment = new DetailsFragment();
-                detailsFragment.setArguments(Movieobj);
-              if (getActivity().findViewById(R.id.fragment_container_tablet) == null) {
-                  getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, detailsFragment).addToBackStack("backToMain").commit();
+              if (getActivity().findViewById(R.id.fragment_container_tablet) != null) {
+                  Bundle Movieobj = new Bundle();
+                  Movieobj.putSerializable("MovieObj", (Serializable) moviesAdapter.getItem(position));
+                  DetailsFragment detailsFragment = new DetailsFragment();
+                  detailsFragment.setArguments(Movieobj);
+
+                  getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_tablet, detailsFragment).commit();
               }
                 else{
-                  getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_tablet, detailsFragment).addToBackStack("backToMainTablet").commit();
+                  Intent intent = new Intent(getActivity(),DetailesActivity.class);
+                  intent.putExtra("MovieObj",(Serializable) moviesAdapter.getItem(position));
+                  getContext().startActivity(intent);
               }
             }
         });

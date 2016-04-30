@@ -168,8 +168,12 @@ public class DetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_details, null);
-        currentMovie = (Movies) getArguments().getSerializable("MovieObj");
-
+        if(getActivity().findViewById(R.id.fragment_container_tablet) != null) {
+            currentMovie = (Movies) getArguments().getSerializable("MovieObj");
+        }
+        else {
+            currentMovie = (Movies) getActivity().getIntent().getSerializableExtra("MovieObj");
+        }
         Picasso.with(getActivity()).load("http://image.tmdb.org/t/p/w185/" + currentMovie.getPoster()).into((ImageView) view.findViewById(R.id.posterView));
 
         ((TextView) view.findViewById(R.id.titleView)).setText(currentMovie.getTitle() + "\n\n" + currentMovie.getReleaseDate() + "\n\n" + currentMovie.getVoteAverage());
