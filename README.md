@@ -1,5 +1,5 @@
 # Movies App
-It is an android application to list most popular or highest rated movies.
+It is an android application to list most popular and highest rated movies.
 
 Suitable for mobile devices and 'sw-600dp' tablets.
 
@@ -16,14 +16,14 @@ Suitable for mobile devices and 'sw-600dp' tablets.
 ## Libraries Used
 <li><a href='http://square.github.io/picasso/'>Picasso</a></li>
 
-## Next Step
+## Next Steps
 <li>Design improvements</li>
 <li>'No Internet Connection' handling</li>
 <li>handling another tablets' sizes</li>
 Your contribution is welcome!
 
 ## License
-This project is licensed under the MIT License - see the <a href='/LICENSE'>LICENSE</a> file for details
+This project is licensed under the MIT License - see the <a href='/LICENSE.md'>LICENSE.md</a> file for details
 
 ## Acknowledgments
 <a href='https://www.mobileapplaunchpad.com.eg/en/index'>Mobile Application Launchpad</a>
